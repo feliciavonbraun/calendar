@@ -33,7 +33,32 @@ aside {
 /* MAIN */
 main {
     background-color: hotpink;
+    grid-template-columns: 2rem auto;
+    grid-template-rows: 2rem auto;
+    gap: .5rem;
+
     grid-area: main;
+}
+
+.name-of-days {
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+}
+
+.week-container {
+    grid-template-columns: repeat(auto-fill, minmax(4rem, 1fr));
+    text-align: center;
+}
+
+.date-container {
+    grid-template-columns: repeat(7, 1fr);
+    gap: .5rem;
+}
+
+.square {
+    background-color: indigo;
+    height: 10rem;
+    width: 100%;
 }
 
 
@@ -43,6 +68,10 @@ main {
 /* REUSABLE CODE */
 
 /* Flex / Grid */
+.grid {
+    display: grid;
+}
+
 .flex {
     display: flex;
 }
@@ -55,4 +84,5 @@ main {
 /* Text */
 h1, h2, p {
     margin: 0;
+    padding: 0;
 }
