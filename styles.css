@@ -3,7 +3,7 @@ body {
 
     display: grid;
     grid-template-columns: .5fr 2fr;
-    grid-template-rows: 8rem auto;
+    grid-template-rows: 5rem auto;
     grid-template-areas: 
     "aside header"
     "aside main";
@@ -11,10 +11,14 @@ body {
 
 /* HEADER */
 header {
-    background-color: blue;
     display: grid;
     grid-template-rows: repeat(2, 1fr);
     grid-area: header;  
+}
+
+.month-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
 }
 
 /* ASIDE */
@@ -34,6 +38,33 @@ main {
 
 
 
-
 /* REUSABLE CODE */
 
+/* Flex / Grid */
+.flex {
+    display: flex;
+}
+
+.center {
+    justify-content: center;
+    align-items: center;
+}
+
+/* Text */
+h1, h2, p {
+    margin: 0;
+}
+
+h1 {
+    font-size: 2rem;
+    color: white;
+}
+
+h2 {
+    font-size: 1.5rem;
+}
+
+/* Colors */
+.orange-bg {
+    background-color: #FFA023;
+}
