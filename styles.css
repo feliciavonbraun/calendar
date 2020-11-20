@@ -38,17 +38,15 @@ img {
     flex-direction: row;
 }
 
-.currentToDoList {
+.addToDoDiv {
     display: flex;
     justify-content: flex-end;
     padding: 0 1rem 1rem;
 }
 
-/* .currentToDoList {
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-} */
+.currentToDoList {
+    flex-direction: column;
+}
 
 /* MAIN */
 main {
@@ -61,6 +59,10 @@ main {
 
 /* REUSABLE CODE */
 .addToDo {
+    justify-content: flex-end;
+    padding: 0 1rem 1rem;
+}
+.addToDo > :first-child { 
     background: orange;
     color: white;
     border-radius: 1000px;
