@@ -1,0 +1,30 @@
+body {
+    margin: 0;
+
+    display: grid;
+    grid-template-columns: .5fr 2fr;
+    grid-template-rows: 8rem auto;
+    grid-template-areas: 
+    "aside header"
+    "aside main";
+}
+
+header {
+    background-color: blue;
+    grid-area: header;  
+}
+
+aside {
+    background-color: green;
+    height: 100vh;
+    min-width: 15rem;
+    grid-area: aside;
+}
+
+main {
+    background-color: hotpink;
+    grid-area: main;
+}
+
+
+/* Resuable code */
