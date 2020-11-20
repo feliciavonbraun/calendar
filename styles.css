@@ -9,11 +9,15 @@ body {
     "aside main";
 }
 
+/* HEADER */
 header {
     background-color: blue;
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
     grid-area: header;  
 }
 
+/* ASIDE */
 aside {
     background-color: green;
     height: 100vh;
@@ -21,10 +25,15 @@ aside {
     grid-area: aside;
 }
 
+/* MAIN */
 main {
     background-color: hotpink;
     grid-area: main;
 }
 
 
-/* Resuable code */
+
+
+
+/* REUSABLE CODE */
+
