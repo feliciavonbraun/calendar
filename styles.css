@@ -9,11 +9,20 @@ body {
     "aside main";
 }
 
+/* HEADER */
 header {
     background-color: blue;
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
     grid-area: header;  
 }
 
+.month-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* ASIDE */
 aside {
     background-color: green;
     height: 100vh;
@@ -21,10 +30,29 @@ aside {
     grid-area: aside;
 }
 
+/* MAIN */
 main {
     background-color: hotpink;
     grid-area: main;
 }
 
 
-/* Resuable code */
+
+
+
+/* REUSABLE CODE */
+
+/* Flex / Grid */
+.flex {
+    display: flex;
+}
+
+.center {
+    justify-content: center;
+    align-items: center;
+}
+
+/* Text */
+h1, h2, p {
+    margin: 0;
+}
