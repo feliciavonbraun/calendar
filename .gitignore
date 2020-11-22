@@ -1,0 +1,5 @@
+# comments 
+.vscode
+
+# Ignore in every subfolder
+**/.DS_Store
