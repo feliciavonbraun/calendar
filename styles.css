@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
 
@@ -31,9 +35,48 @@ aside {
 
 /* MAIN */
 main {
-    background-color: hotpink;
+    grid-template-columns: 2rem auto;
+    grid-template-rows: 2rem auto;
+    column-gap: .5rem;
+
+    background-color: white;
     grid-area: main;
 }
+
+.name-of-days {
+    grid-template-columns: repeat(7, 1fr);
+    column-gap: .5rem;
+    text-align: center;
+    background-color: #F1F0F0;
+}
+
+.week-title {
+    background-color: #F1F0F0;
+}
+
+.week {
+    row-gap: 1rem;
+    background-color: #F1F0F0;
+}
+
+
+.date-container {
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: .5rem;
+}
+
+.date {
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    background-color: white;
+
+    /* Active day + to do*/
+    border: .2rem solid #FFA023;
+    border-top: 1rem solid #FFA023;
+}
+
 
 
 
@@ -41,6 +84,10 @@ main {
 /* REUSABLE CODE */
 
 /* Flex / Grid */
+.grid {
+    display: grid;
+}
+
 .flex {
     display: flex;
 }
@@ -53,6 +100,11 @@ main {
 /* Text */
 h1, h2, p {
     margin: 0;
+    padding: 0;
+}
+
+.large-text {
+    font-size: 2.5rem;
 }
 
 h1 {
