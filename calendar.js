@@ -24,6 +24,7 @@ function monthDay() {
     let month = date.getMonth();
     let monthName = date.toLocaleString(lang, { month: 'long' })
     document.getElementById('current-month').innerHTML = monthName;
+    
 }
 
 function nextMonth() {
@@ -67,6 +68,11 @@ function nextMonth() {
             months: 'December'
         }
     ]
+    var now = new Date();
+    if (now.getMonth() == 11) {
+    var current = new Date(now.getMonth() + i++);
+    } 
+    document.getElementById('current-month').innerHTML = current;
   
 }
 
