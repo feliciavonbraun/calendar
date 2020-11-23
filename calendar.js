@@ -9,8 +9,8 @@ function main() {
 }
 
 function addEventListeners() {
-    document.getElementById('prev').addEventListener('click', changeMonth)
-    document.getElementById('next').addEventListener('click', changeMonth)
+    document.getElementById('prev').addEventListener('click', prevMonth)
+    document.getElementById('next').addEventListener('click', monthDay)
 }
 
 
@@ -22,14 +22,56 @@ function calendarDays() {
 function monthDay() {
     const lang = navigator.language;
     let month = date.getMonth();
-    let monthName = date.toLocaleString(lang,{month: 'long'})
+    let monthName = date.toLocaleString(lang, { month: 'long' })
     document.getElementById('current-month').innerHTML = monthName;
-    
-    changeMonth();
 }
 
-function changeMonth() {
-    //alert('You changed!');
+function nextMonth() {
+    //alert("You changed!");
+
+    const months = [
+        {
+            months: 'Januari'
+        },
+        {
+            months: 'Februari'
+        },
+        {
+            months: 'Mars'
+        },
+        {
+            months: 'April'
+        },
+        {
+            months: 'Maj'
+        },
+        {
+            months: 'Juni'
+        },
+        {
+            months: 'Juli'
+        },
+        {
+            months: 'Augusti'
+        },
+        {
+            months: 'September'
+        },
+        {
+            months: 'Oktober'
+        },
+        {
+            months: 'November'
+        },
+        {
+            months: 'December'
+        }
+    ]
+}
+
+
+function prevMonth() {
+    //alert("Don't look back!")
 }
 
 
