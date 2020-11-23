@@ -10,7 +10,7 @@ function main() {
 
 function addEventListeners() {
     document.getElementById('prev').addEventListener('click', prevMonth)
-    document.getElementById('next').addEventListener('click', monthDay)
+    document.getElementById('next').addEventListener('click', nextMonth)
 }
 
 
@@ -67,6 +67,7 @@ function nextMonth() {
             months: 'December'
         }
     ]
+  
 }
 
 
