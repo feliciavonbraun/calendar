@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="./styles.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="./main.js"></script>
+    <script defer src="today.js"></script>
+    <script defer src="greetingimage.js"></script>
 </head>
 
 <body>
@@ -32,9 +34,10 @@
             </div>
         </div>
         <div class="flex center todaysTime" style="background: aqua;">
-            <p>Goddag!</p>
-            <p>15:53</p>
-            <p>Måndag 18e November</p>
+            <p id="greeting">Yo</p>
+            <p id="time">Tid</p>
+            <p id="weekday">Veckodag</p> 
+            <p id="month">Månad</p>
         </div>
         <div>
             <h3 class="flex center" style="background: orange;">Dina To-Do's</h3>
