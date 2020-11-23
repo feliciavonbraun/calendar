@@ -6,20 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Schema</title>
     <link rel="stylesheet" href="./styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="./main.js"></script>
 </head>
 
 <body>
-    <header>
+    <header class="grid">
         <div class="flex center orange-bg">
             <h1>Min kalender</h1>
         </div>
-        <div class="month-grid">
-            <p class="flex center">---</p>
-            <h2 class="flex center">November</h3>
-                <p class="flex center">---</p>
+        <div class="year grid center">
+            <h2>2020</h2>
+        </div>
+        <div class="month-grid grid center">
+            <a class="prev">&#10094;</a>
+            <h2 class="flex center">November</h2>
+            <a class="next">&#10095;</a>
         </div>
     </header>
-    <aside>
+    <aside class="grid">
         <div class="flex center">
             <div><img src="images/day.jpg" alt=""></div>
             <div class="profilePicture">
