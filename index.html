@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Schema</title>
     <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./aside.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="./main.js"></script>
 </head>
@@ -36,14 +37,49 @@
             <p>15:53</p>
             <p>Måndag 18e November</p>
         </div>
-        <div>
-            <h3 class="flex center" style="background: orange;">Dina To-Do's</h3>
-        </div>
-        <div class="flex addToDo">
-            <button class="flex center">+</button>
+        <div class="todo-grid grid">
+            <div class="todo-main-title flex center">
+                <h3 class="flex center">Dagens To-Do's</h3>
+            </div>
+            <!-- Show todo's for selected day -->
+            <div id="show-todos" class="todo-container">
+                <div class="todo-event grid">
+                    <div class="event-time">
+                        <p>14:00</p>
+                    </div>
+                    <div class="event-information">
+                        <p><b>Klippa gräset</b></p>
+                        <p>Glöm inte bensinen</p>
+                    </div>
+                    <div class="event-delete flex flex-end">
+                        <span class="material-icons">cancel</span>
+                    </div>
+                </div>  
+            </div>
+            <!-- Create new todo -->
+            <div id="create-todo" class="todo-container">
+                <form class="new-todo">
+                    <input type="text" id="title" placeholder="Titel">
+
+                    <input type="date" id="date">
+
+                    <input type="time" id="time">
+
+                    <textarea type="text" id="notes" placeholder="Anteckningar"></textarea>
+                </form>
+            </div>
+            <div class="button-container">
+                <div class="icon-container flex flex-end">
+                    <span id="create-todo-button" class="create-todo-button material-icons">add_circle</span>
+                </div>
+                <div class="icon-container flex space-between">
+                    <span id="cancel-todo-button" class="cancel-todo-button material-icons">cancel</span>
+                    <button id="add-todo-button" class="add-todo-button">Lägg till</button>
+                </div>
+            </div>
         </div>
     </aside>
-  
+
     <main class="grid">
         <div class="week-title flex center">
             <p>V.</p>
