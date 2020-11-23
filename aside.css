@@ -1,0 +1,141 @@
+/* ASIDE */
+aside {
+    height: 100vh;
+    min-width: 15rem;
+    grid-template-rows: 1fr 1fr 3fr;
+    grid-area: aside;
+}
+
+.profilePicture {
+    position: absolute;
+    width: 10%;
+}
+
+.profilePicture > :first-child {
+    border-radius: 50%;
+}
+
+img {
+    display: grid;
+    width: 100%;
+    flex-direction: row;
+}
+
+.todaysTime {
+    flex-direction: column;
+    
+}
+
+/* Aside - Grid for todo area */
+.todo-grid {
+    grid-template-rows: 2rem auto 4rem;
+    background-color: #C4C4C4;
+    grid-template-areas: 
+    "main-title"
+    "todo-container"
+    "button-container";
+}
+
+.todo-main-title {
+    background-color: #FFA023;
+    color: white;
+    grid-area: main-title;
+}
+
+.todo-container{
+    padding: .5rem; 
+    grid-area: todo-container;
+}
+
+.button-container {
+    padding: .5rem;
+    grid-area: button-container;
+}
+
+/* Aside - All pages for main content */
+#show-todos {
+    display: unset;                                  /* <--- Display */
+}
+
+#create-todo {
+    display: none;                                  /* <--- Display */
+}
+
+/* Aside - #Show todo's - layout */
+.todo-event {
+    grid-template-columns: 4rem auto;
+    grid-template-rows: auto 2rem;
+    grid-template-areas: 
+    "time event"
+    ". delete";
+
+    padding: .3rem;
+    border-top: .3rem solid #FFA023;
+    background-color: white;
+}
+
+.event-time {
+    grid-area: time;
+}
+
+.event-information {
+    grid-area: event;
+}
+
+.event-delete {
+    align-items: flex-end;
+    grid-area: delete;
+}
+
+    /* Button - add new todo */
+.icon-container .create-todo-button {
+    color: #FFA023;
+    font-size: 3rem;
+    cursor: pointer;
+    display: unset;                                  /* <--- Display */
+}
+
+/* Aside - #Create todo - layout */
+.new-todo input {
+    width: 100%;
+    margin-bottom: .5rem;
+}
+
+.new-todo textarea {
+    width: 100%;
+    height: 8rem;
+    resize: none;
+}
+    /* Form text color */
+.new-todo input::placeholder, 
+.new-todo textarea::placeholder {
+    color: black;
+}
+    /* Border color focus */
+.new-todo input:focus,
+.new-todo textarea:focus {
+    outline-color: #FFA023;
+}
+    /* Whitespace between inputs */
+.new-todo input[type],
+.new-todo textarea[type] {
+    padding-left: .3rem;
+}
+
+    /* Buttons - Add new todo to calendar, or cancel new todo */
+.add-todo-button {
+    background: #FFA023;
+    color: white;
+    border: none;
+    width: 10rem;
+    font-weight: bold;
+    cursor: pointer;
+    display: none;                                  /* <--- Display */
+}
+
+.button-container .cancel-todo-button {
+    font-size: 3rem;
+    color: #333;
+    cursor: pointer;
+    display: none;                                  /* <--- Display */
+}
