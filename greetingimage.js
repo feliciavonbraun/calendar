@@ -44,17 +44,17 @@ function getGreet() {
     // }
 }
 
-// function getImage(){
-//     const imageHolder = document.getElementById('skyImage')
+function getImage(){
+    const imageHolder = document.getElementById('skyImage')
 
-//     let hours = new Date().getHours(); 
-//     if(hours > 6, hours < 11) {
-//         document.write("<img src='images/day.jpg'>")    
-//     } 
-//     else if(hours > 6, hours < 11) {
-//         document.write("<img src='images/dawn.jpg'>")    
-//     } 
-//     else {
-//         document.write("<img src='images/night.jpg'>")    
-//     } 
-// }
+    let hours = new Date().getHours(); 
+    if(hours > 6, hours < 16) {
+        imageHolder.innerHTML = ("<img src='images/day.jpg' width=50% >")    
+    } 
+    else if(hours > 16, hours < 18) {
+        imageHolder.innerHTML = ("<img src='images/dawn.jpg' width=50% >")    
+    } 
+    else {
+        imageHolder.innerHTML = ("<img src='images/stars.jpg' width=50% >")    
+    } 
+}
