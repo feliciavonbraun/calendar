@@ -39,14 +39,16 @@ function updateEverything() {
 // SKRIVER UT TIDEN 
 function getTime(date) {
 
+    
+
     let hours = date.getHours();
     let minutes = date.getMinutes();
     
     hours = formateDateCounter(hours); 
     minutes = formateDateCounter(minutes); 
 
-    const timeHolder = document.getElementById('time')
-    timeHolder.innerHTML = hours + ':' + minutes;
+    // const timeHolder = document.getElementById('time');
+    // timeHolder.innerHTML = hours + ':' + minutes;
 }
 
 function formateDateCounter(counter) {

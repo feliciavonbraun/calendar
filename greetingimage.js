@@ -13,21 +13,26 @@ function nbrtwo() {
     
 // }
 
+// SET INTERVAL
+
 
 function getGreet() {
     const greetHolder = document.getElementById('greeting');
     
     let hours = new Date().getHours();
-    if(hours > 6, hours < 11) {
+    if(hours > 5, hours < 10) {
         greetHolder.innerHTML = 'Godmorgon';
     } 
-    else if(hours > 11, hours < 13){
+    else if(hours >= 10, hours < 13){
+        greetHolder.innerHTML = 'God förmiddag';
+    }
+    else if(hours >= 11, hours < 13){
         greetHolder.innerHTML = 'Godmiddag';
     }
-    else if(hours > 13, hours < 17){
+    else if(hours >= 13, hours < 17){
         greetHolder.innerHTML = 'God eftermiddag'
     }
-    else if(hours > 17, hours < 21){
+    else if(hours >= 17, hours < 21){
         greetHolder.innerHTML = 'Godkväll'
     }
     else {
@@ -48,10 +53,13 @@ function getImage(){
     const imageHolder = document.getElementById('skyImage')
 
     let hours = new Date().getHours(); 
-    if(hours > 6, hours < 16) {
+    if(hours > 5, hours < 9) {
+        imageHolder.innerHTML = ("<img src='images/sunrise.jpg' width=50% >")    
+    } 
+    else if(hours >= 9, hours < 17) {
         imageHolder.innerHTML = ("<img src='images/day.jpg' width=50% >")    
     } 
-    else if(hours > 16, hours < 18) {
+    else if(hours >= 17, hours < 20) {
         imageHolder.innerHTML = ("<img src='images/dawn.jpg' width=50% >")    
     } 
     else {
