@@ -1,90 +1,68 @@
-window.addEventListener('load', main);
 
 let date = new Date();
 
-function main() {
-    addEventListeners();
-    calendarDays();
-    monthName();
-    fullYear();
-
+/** Start of calendar */
+function calendar() {
+    showCurrentMonth();
+    showYear();
+    getMonth();
 }
 
-function addEventListeners() {
-    document.getElementById('prev').addEventListener('click', prevMonth)
-    document.getElementById('next').addEventListener('click', nextMonth)
+/* Hämta månad */
+function getMonth() {
+    let fakeMonth = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15,
+        16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30];
+
+    getDaysInMonth(fakeMonth);
 }
 
+/* Få alla dagar i månad */
+function getDaysInMonth(fakeMonth) {
+    const daysInMonth = fakeMonth.length;
 
-function calendarDays() {
-    let dayNumber = date.getDate();
-    document.getElementById("day").innerHTML = date.getDate();
+    createElementForEachDay(fakeMonth, daysInMonth);
 }
 
-function monthName() {
-    const lang = navigator.language;
-    let month = date.getMonth();
-    let monthName = date.toLocaleString(lang, { month: 'long' })
-    document.getElementById('current-month').innerHTML = monthName;
-    
+/* Skapa element för alla dagar i månad */
+function createElementForEachDay(fakeMonth, daysInMonth) {
+    const daysContainer = document.getElementById("day-container");
+    daysContainer.innerHTML = "";
+    let id = 0;
+
+    for (let i = 0; i < daysInMonth; i++) {
+        const date = fakeMonth[i];
+        const day = createDay(date, id);
+        daysContainer.append(day)
+
+        id++;
+
+    }
 }
 
-function fullYear() {
+/* Skapa dag div */
+function createDay(date, id) {
+    day = document.createElement('div');
+    day.classList.add('date', 'grid', 'center', 'date:hover');
+    day.innerHTML = date;
+    day.id = id;
+    return day;
+}
+
+function presentDays(data) {
+    const container = document.getElementById('day');
+    container.innerHTML = data.getDate;
+    console.log(data)
+}
+
+/* HEADER */
+function showYear() {
     let year = date.getFullYear();
-    document.getElementById("current-year").innerHTML = date.getFullYear();
+    document.getElementById('current-year').innerHTML = date.getFullYear();
 }
 
-function nextMonth() {
-    //alert("You changed!");
-
-    const months = [
-        {
-            months: 'Januari'
-        },
-        {
-            months: 'Februari'
-        },
-        {
-            months: 'Mars'
-        },
-        {
-            months: 'April'
-        },
-        {
-            months: 'Maj'
-        },
-        {
-            months: 'Juni'
-        },
-        {
-            months: 'Juli'
-        },
-        {
-            months: 'Augusti'
-        },
-        {
-            months: 'September'
-        },
-        {
-            months: 'Oktober'
-        },
-        {
-            months: 'November'
-        },
-        {
-            months: 'December'
-        }
-    ]
-    var now = new Date();
-    if (now.getMonth() == 11) {
-    var current = new Date(now.getMonth() + i++);
-    } 
-    document.getElementById('current-month').innerHTML = current;
-  
+function showCurrentMonth() {
+    let months = ['Januari', 'Februari', 'Mars', 'April', 'Maj', 'Juni',
+        'Juli', 'Augusti', 'September', 'Oktober', 'November', 'December']
+    document.getElementById('current-month').innerHTML =
+        months[date.getMonth()];
 }
-
-
-function prevMonth() {
-    //alert("Don't look back!")
-}
-
