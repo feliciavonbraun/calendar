@@ -5,7 +5,9 @@ let date = new Date();
 function main() {
     addEventListeners();
     calendarDays();
-    monthDay();
+    monthName();
+    fullYear();
+
 }
 
 function addEventListeners() {
@@ -19,12 +21,17 @@ function calendarDays() {
     document.getElementById("day").innerHTML = date.getDate();
 }
 
-function monthDay() {
+function monthName() {
     const lang = navigator.language;
     let month = date.getMonth();
     let monthName = date.toLocaleString(lang, { month: 'long' })
     document.getElementById('current-month').innerHTML = monthName;
     
+}
+
+function fullYear() {
+    let year = date.getFullYear();
+    document.getElementById("current-year").innerHTML = date.getFullYear();
 }
 
 function nextMonth() {
@@ -81,8 +88,3 @@ function prevMonth() {
     //alert("Don't look back!")
 }
 
-
-
-
-
-//url: 'http://sholiday.faboul.se/dagar/v2.1/2015/02',
