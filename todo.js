@@ -41,11 +41,10 @@ function showTodoPage() {
 }
 
 
-document.getElementById('add-todo-button').addEventListener('submit', newTodo).value;
 
-function newTodo() {
 
-} 
+
+
 
 
 
