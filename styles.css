@@ -73,6 +73,10 @@ main {
     border-top: 1rem solid #FFA023;
 }
 
+.date:hover {
+    background-color: #f8cf99;
+}
+
 
 
 

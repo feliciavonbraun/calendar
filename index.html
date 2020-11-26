@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./aside.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="./main.js"></script>
+    <script src="./calendar.js"></script>
     <script src="./todo.js"></script>
 </head>
 
@@ -18,12 +19,12 @@
             <h1>Min kalender</h1>
         </div>
         <div class="year grid center">
-            <h2>2020</h2>
+            <h2 id="current-year"></h2>
         </div>
         <div class="month-grid grid center">
-            <a class="prev">&#10094;</a>
-            <h2 class="flex center">November</h2>
-            <a class="next">&#10095;</a>
+            <a id="prev" class="prev">&#10094;</a>
+            <h2 id="current-month" class="flex center"></h2>
+            <a id="next" class="next">&#10095;</a>
         </div>
     </header>
     <aside class="grid">
@@ -101,11 +102,8 @@
             <p>23</p>
             <p>24</p>
         </div>
-        <div class="date-container grid center">
-            <div class="date grid center">
-                <p class="large-text">11</p>
-                <p>3</p>
-            </div>               
+        <div id="day-container" class="date-container grid center">
+            <!-- Days appear from Calendar.js -->
         </div>
     </main>
 </body>
