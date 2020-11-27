@@ -1,0 +1,19 @@
+@media (max-width: 750px) {
+
+
+    .hide-on-mobile {
+        display: none;
+    }
+
+    .aside {
+        width: 100%;
+        grid-column: none;
+    }
+
+   
+
+    .profilePicture {
+        width: 20%;
+    }
+
+}

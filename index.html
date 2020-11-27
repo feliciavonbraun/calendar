@@ -7,14 +7,15 @@
     <title>Schema</title>
     <link rel="stylesheet" href="./styles.css">
     <link rel="stylesheet" href="./aside.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="./mobile.css">
     <script src="./main.js"></script>
     <script src="./calendar.js"></script>
     <script src="./todo.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 <body>
-    <header class="grid">
+    <header class="grid hide-on-mobile">
         <div class="flex center orange-bg">
             <h1>Min kalender</h1>
         </div>
@@ -27,7 +28,8 @@
             <a id="next" class="next">&#10095;</a>
         </div>
     </header>
-    <aside class="grid">
+
+    <aside class="grid aside">
         <div class="flex center">
             <div><img src="images/day.jpg" alt=""></div>
             <div class="profilePicture">
@@ -85,7 +87,7 @@
         </div>
     </aside>
 
-    <main class="grid">
+    <main class="grid hide-on-mobile" >
         <div class="week-title flex center">
             <p>V.</p>
         </div>
