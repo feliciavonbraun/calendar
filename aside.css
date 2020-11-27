@@ -49,19 +49,19 @@ img {
 
 .button-container {
     padding: .5rem;
-    grid-area: button-container;
+    grid-area: button-container;    
 }
 
-/* Aside - All pages for main content */
-#show-todos {
+/* Aside - Pages for main content. Display value changes in javascript. */
+.todo-page {
     display: unset;                                  /* <--- Display */
 }
 
-#create-todo {
+.new-todo-page {
     display: none;                                  /* <--- Display */
 }
 
-/* Aside - #Show todo's - layout */
+/* Aside - todoPage - layout */
 .todo-event {
     grid-template-columns: 4rem auto;
     grid-template-rows: auto 2rem;
@@ -88,14 +88,13 @@ img {
 }
 
     /* Button - add new todo */
-.icon-container .create-todo-button {
+.button-container .create-todo-button {
     color: #FFA023;
     font-size: 3rem;
     cursor: pointer;
-    display: unset;                                  /* <--- Display */
 }
 
-/* Aside - #Create todo - layout */
+/* Aside - newTodoPage - layout */
 .new-todo input {
     width: 100%;
     margin-bottom: .5rem;
@@ -122,20 +121,18 @@ img {
     padding-left: .3rem;
 }
 
-    /* Buttons - Add new todo to calendar, or cancel new todo */
-.add-todo-button {
+    /* Buttons - Add save todo to calendar, or cancel new todo */
+.save-todo-button {
     background: #FFA023;
     color: white;
     border: none;
     width: 10rem;
     font-weight: bold;
     cursor: pointer;
-    display: none;                                  /* <--- Display */
 }
 
 .button-container .cancel-todo-button {
     font-size: 3rem;
     color: #333;
     cursor: pointer;
-    display: none;                                  /* <--- Display */
 }

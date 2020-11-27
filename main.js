@@ -1,7 +1,7 @@
 window.addEventListener('load', main);
 
 function main() {
-    // todo();
+    todo();
     // today();
     calendar(); 
 
