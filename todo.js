@@ -1,59 +1,49 @@
+/* Start function */
 function todo() {
-    getTodoButton();
-    getCancelButton();
+    getButtonElements();
 }
 
-function getTodoButton() { 
-    document.getElementById('create-todo-button').addEventListener('click', showAddTodoPage);
-}
-
-function showAddTodoPage() { 
-    const showTodos = document.getElementById("show-todos");
-    const createTodos = document.getElementById("create-todo");
-    const createTodoButton = document.getElementById("create-todo-button");
-    const cancelTodoButton = document.getElementById("cancel-todo-button");
-    const addTodoButton = document.getElementById("add-todo-button");
-
-    showTodos.style.display = 'none';
-    createTodos.style.display = 'unset';
-    createTodoButton.style.display = 'none';
-    cancelTodoButton.style.display = 'unset';
-    addTodoButton.style.display = 'unset';
-}
-
-
-function getCancelButton() {
-    document.getElementById('cancel-todo-button').addEventListener('click', showTodoPage);
-}
-
-function showTodoPage() {
-    const showTodos = document.getElementById("show-todos");
-    const createTodos = document.getElementById("create-todo");
-    const createTodoButton = document.getElementById("create-todo-button");
-    const cancelTodoButton = document.getElementById("cancel-todo-button");
-    const addTodoButton = document.getElementById("add-todo-button");
-
-    showTodos.style.display = 'unset';
-    createTodos.style.display = 'none';
-    createTodoButton.style.display = 'unset';
-    cancelTodoButton.style.display = 'none';
-    addTodoButton.style.display = 'none';
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* Get button elements from Html */
+function getButtonElements() {
+    const createNewTodoButton = document.getElementById('create-new-todo-button');
+    const saveNewTodoButton = document.getElementById('save-new-todo-button');
+    const cancelNewTodoButton = document.getElementById('cancel-new-todo-button');
     
+    handleButtonClick(createNewTodoButton, cancelNewTodoButton, saveNewTodoButton);   
+}
 
+/* Event listeners for buttons */
+function handleButtonClick(createNewTodoButton, cancelNewTodoButton, saveNewTodoButton) {
+    createNewTodoButton.addEventListener('click', showNextPage);
+    saveNewTodoButton.addEventListener('click', showNextPage);
+    cancelNewTodoButton.addEventListener('click', showNextPage);    
+}
+
+/* Show next page (display) */
+function showNextPage(event) {
+    const todoPage = Array.from(document.getElementsByClassName('todo-page'));
+    const newTodoPage = Array.from(document.getElementsByClassName('new-todo-page'));
     
+    const clickedButton = event.target;   
 
-  
+    if (clickedButton.id == 'create-new-todo-button'){
+        newTodoPage.forEach(showPage)
+        todoPage.forEach(hidePage)
+    } else if (clickedButton.id == 'cancel-new-todo-button') {
+        todoPage.forEach(showPage); 
+        newTodoPage.forEach(hidePage)
+    } else if (clickedButton.id == 'save-new-todo-button') {
+        todoPage.forEach(showPage); 
+        newTodoPage.forEach(hidePage)
+    }
+}
+
+/* Show element */
+function showPage(element) {
+    element.style.display = 'unset';
+}
+
+/* Hide element */
+function hidePage(element) {
+    element.style.display = 'none';
+}

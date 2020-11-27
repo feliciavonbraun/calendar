@@ -44,7 +44,7 @@
                 <h3 class="flex center">Dagens To-Do's</h3>
             </div>
             <!-- Show todo's for selected day -->
-            <div id="show-todos" class="todo-container">
+            <div class="todo-container todo-page">
                 <div class="todo-event grid">
                     <div class="event-time">
                         <p>14:00</p>
@@ -59,7 +59,7 @@
                 </div>  
             </div>
             <!-- Create new todo -->
-            <div id="create-todo" class="todo-container">
+            <div class="todo-container new-todo-page">
                 <form class="new-todo">
                     <input type="text" id="title" placeholder="Titel">
 
@@ -69,14 +69,17 @@
 
                     <textarea type="text" id="notes" placeholder="Anteckningar"></textarea>
                 </form>
-            </div>        
-            <div class="button-container">
-                <div class="icon-container flex flex-end">
-                    <span id="create-todo-button" class="create-todo-button material-icons">add_circle</span>
+            </div>   
+            <!-- Todo buttons -->     
+            <div class="button-container flex">
+                <div class="todo-page flex flex-1 text-end">
+                    <span id="create-new-todo-button" class="create-todo-button material-icons">add_circle</span>
                 </div>
-                <div class="icon-container flex space-between">
-                    <span id="cancel-todo-button" class="cancel-todo-button material-icons">cancel</span>
-                    <button id="add-todo-button" class="add-todo-button">Lägg till</button>
+                <div class="new-todo-page flex flex-1">
+                    <div class="flex space-between">
+                        <i id="cancel-new-todo-button" class="cancel-todo-button material-icons">cancel</i>
+                        <button id="save-new-todo-button" class="save-todo-button">Lägg till</button>
+                    </div>
                 </div>
             </div>
         </div>
