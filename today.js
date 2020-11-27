@@ -1,31 +1,89 @@
 window.addEventListener ('load', main);
 
 function main() {
+    startEverything();
+}
+
+function startEverything() {
     updateEverything();
-    getTime();
+    getImage();
+    getGreeting();
+    // getTime();
     getWeekday();
     getMonth();
-    getGreeting();
-    // getImage();
+    setInterval(updateEverything, 1000);
+}
+
+// ÄNDRAR BAKGRUNDBILDEN
+function getImage(){
+    const imageHolder = document.getElementById('skyImage')
+    
+    let hours = new Date().getHours(); 
+    if(hours > 5, hours < 9) {
+        imageHolder.innerHTML = ("<img src='images/sunrise.jpg' width=50% >")    
+    } 
+    else if(hours >= 9, hours < 17) {
+        imageHolder.innerHTML = ("<img src='images/day.jpg' width=50% >")    
+    } 
+    else if(hours >= 17, hours < 20) {
+        imageHolder.innerHTML = ("<img src='images/dawn.jpg' width=50% >")    
+    } 
+    else {
+        imageHolder.innerHTML = ("<img src='images/stars.jpg' width=50% >")    
+    } 
+}
+
+// ÄNDRAR HÄLSNINGEN
+function getGreeting() {
+    const greetHolder = document.getElementById('greeting');
+    
+    let hours = new Date().getHours();
+    if(hours > 5, hours < 10) {
+        greetHolder.innerHTML = 'Godmorgon ha en fin dag!';
+    } 
+    else if(hours >= 10, hours < 13){
+        greetHolder.innerHTML = 'God förmiddag';
+    }
+    else if(hours >= 11, hours < 13){
+        greetHolder.innerHTML = 'Godmiddag';
+    }
+    else if(hours >= 13, hours < 17){
+        greetHolder.innerHTML = 'God eftermiddag'
+    }
+    else if(hours >= 17, hours < 21){
+        greetHolder.innerHTML = 'Godkväll'
+    }
+    else {
+        greetHolder.innerHTML = 'Godnatt, bra jobbat idag!'
+    }
+    
+    // switch (greet) {
+    //     case 0: return 'Godmorgon'
+    //     case 1: return 'God förmiddag'
+    //     case 2: return 'Godmiddag'
+    //     case 3: return 'Godeftermiddag'
+    //     case 4: return 'Godkväll'
+    //     case 5: return 'Godnatt'
+    // }
 }
 
 function updateEverything() {
-
+    
     const date = new Date();
 
     // OM JAG ANVÄNDER DETTA ISTÄLLET FÖR EN SEPARAT FUNKTION SÅ FUNKAR DET
-    // let hours = date.getHours();
-    // let minutes = date.getMinutes();
+    let hours = date.getHours();
+    let minutes = date.getMinutes();
 
-    // hours = formateDateCounter(hours); 
-    // minutes = formateDateCounter(minutes); 
+    hours = formateDateCounter(hours); 
+    minutes = formateDateCounter(minutes); 
 
-    // const timeHolder = document.getElementById('time');
-    // timeHolder.innerHTML = hours + ':' + minutes;
+    const timeHolder = document.getElementById('time');
+    timeHolder.innerHTML = hours + ':' + minutes;
 
     //Update time 
-    const timeHolder = document.getElementById('time')
-    timeHolder.innerHTML = getTime(date);
+    // const timeHolder = document.getElementById('time')
+    // timeHolder.innerHTML = getTime(date);
 
     //update weekday
     const weekdayHolder = document.getElementById('weekday')
@@ -37,19 +95,19 @@ function updateEverything() {
 }
 
 // SKRIVER UT TIDEN 
-function getTime(date) {
+// function getTime(date) {
 
     
 
-    let hours = date.getHours();
-    let minutes = date.getMinutes();
+//     let hours = date.getHours();
+//     let minutes = date.getMinutes();
     
-    hours = formateDateCounter(hours); 
-    minutes = formateDateCounter(minutes); 
+//     hours = formateDateCounter(hours); 
+//     minutes = formateDateCounter(minutes); 
 
-    // const timeHolder = document.getElementById('time');
-    // timeHolder.innerHTML = hours + ':' + minutes;
-}
+//     // const timeHolder = document.getElementById('time');
+//     // timeHolder.innerHTML = hours + ':' + minutes;
+// }
 
 function formateDateCounter(counter) {
     if (counter < 10) {
@@ -73,7 +131,7 @@ function getWeekday(date) {
     }
 }
 
-// SKRIVER UT DATUM OCH MÅNAD --- KLAR
+// SKRIVER UT DATUM OCH MÅNAD 
 function getMonth(date) {
     // const date = new Date();
     let dayOfMonth = date.getDate();
