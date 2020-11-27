@@ -6,17 +6,17 @@ function todo() {
 /* Get button elements from Html */
 function getButtonElements() {
     const createNewTodoButton = document.getElementById('create-new-todo-button');
-    //const saveNewTodoButton = document.getElementById('save-new-todo-button');
+    const saveNewTodoButton = document.getElementById('save-new-todo-button');
     const cancelNewTodoButton = document.getElementById('cancel-new-todo-button');
     
-    handleButtonClick(createNewTodoButton, cancelNewTodoButton);   
+    handleButtonClick(createNewTodoButton, cancelNewTodoButton, saveNewTodoButton);   
 }
 
 /* Event listeners for buttons */
-function handleButtonClick(createNewTodoButton, cancelNewTodoButton) {
+function handleButtonClick(createNewTodoButton, cancelNewTodoButton, saveNewTodoButton) {
     createNewTodoButton.addEventListener('click', showNextPage);
-    cancelNewTodoButton.addEventListener('click', showNextPage);
-    //saveNewTodoButton.addEventListener('click', showNextPage); 
+    saveNewTodoButton.addEventListener('click', showNextPage);
+    cancelNewTodoButton.addEventListener('click', showNextPage);    
 }
 
 /* Show next page (display) */
@@ -32,7 +32,10 @@ function showNextPage(event) {
     } else if (clickedButton.id == 'cancel-new-todo-button') {
         todoPage.forEach(showPage); 
         newTodoPage.forEach(hidePage)
-    }   
+    } else if (clickedButton.id == 'save-new-todo-button') {
+        todoPage.forEach(showPage); 
+        newTodoPage.forEach(hidePage)
+    }
 }
 
 /* Show element */
