@@ -7,14 +7,15 @@
     <title>Schema</title>
     <link rel="stylesheet" href="./styles.css">
     <link rel="stylesheet" href="./aside.css">
+    <link rel="stylesheet" href="./mobile.css">
+    <script src="./JavaScript/main.js"></script>
+    <script src="./JavaScript/calendar.js"></script>
+    <script src="./JavaScript/todo.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <script src="./main.js"></script>
-    <script src="./calendar.js"></script>
-    <script src="./todo.js"></script>
 </head>
 
 <body>
-    <header class="grid">
+    <header class="grid hide-on-mobile">
         <div class="flex center orange-bg">
             <h1>Min kalender</h1>
         </div>
@@ -27,17 +28,20 @@
             <a id="next" class="next">&#10095;</a>
         </div>
     </header>
-    <aside class="grid">
-        <div class="flex center">
-            <div><img src="images/day.jpg" alt=""></div>
-            <div class="profilePicture">
-                <img src="images/profile-pic.png" alt="">
+
+    <aside class="grid aside">
+        <div class="mobile-header">
+            <div class="flex center">
+                <div id="skyImage"><img src="images/day.jpg" alt=""></div>
+                <div class="profilePicture">
+                    <img src="images/profile-pic.png" alt="">
+                </div>
             </div>
-        </div>
-        <div class="flex center todaysTime" style="background: aqua;">
-            <p>Goddag!</p>
-            <p>15:53</p>
-            <p>Måndag 18e November</p>
+            <div class="flex center todaysTime" style="background: aqua;">
+                <p>Goddag!</p>
+                <p>15:53</p>
+                <p>Måndag 18e November</p>
+            </div>
         </div>
         <div class="todo-grid grid">
             <div class="todo-main-title flex center">
@@ -85,7 +89,7 @@
         </div>
     </aside>
 
-    <main class="grid">
+    <main class="grid hide-on-mobile" >
         <div class="week-title flex center">
             <p>V.</p>
         </div>
