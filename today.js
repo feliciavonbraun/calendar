@@ -4,14 +4,18 @@ function main() {
     startEverything();
 }
 
+function updateImgAndGreeting() {
+}
+
 function startEverything() {
     updateEverything();
+    setInterval(updateEverything, 1000);
+    
     getImage();
     getGreeting();
     // getTime();
     getWeekday();
     getMonth();
-    setInterval(updateEverything, 1000);
 }
 
 // ÄNDRAR BAKGRUNDBILDEN
@@ -118,7 +122,7 @@ function formateDateCounter(counter) {
 
 //SKRIVER UT VECKODAGEN
 function getWeekday(date) {
-    let weekday = date.getDay();
+    const weekday = date.getDay();
 
     switch (weekday) {
         case 0: return 'Söndag'
@@ -134,8 +138,8 @@ function getWeekday(date) {
 // SKRIVER UT DATUM OCH MÅNAD 
 function getMonth(date) {
     // const date = new Date();
-    let dayOfMonth = date.getDate();
-    let month = date.getMonth();
+    const dayOfMonth = date.getDate();
+    const month = date.getMonth();
     
     const prefix = dayOfMonth + ' ';
     switch (month) {
