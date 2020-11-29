@@ -1,21 +1,17 @@
-window.addEventListener ('load', main);
 
-function main() {
-    startEverything();
+function today() {
+    startIntervals();
 }
 
-function updateImgAndGreeting() {
-}
-
-function startEverything() {
-    updateEverything();
-    setInterval(updateEverything, 1000);
-    
+function startIntervals() {
     getImage();
+    setInterval(getImage, 1000 * 60 * 60);
+
     getGreeting();
-    // getTime();
-    getWeekday();
-    getMonth();
+    setInterval(getGreeting, 3600 * 60 * 60)
+
+    updateClock();
+    setInterval(updateClock, 1000);
 }
 
 // ÄNDRAR BAKGRUNDBILDEN
@@ -23,10 +19,10 @@ function getImage(){
     const imageHolder = document.getElementById('skyImage')
     
     let hours = new Date().getHours(); 
-    if(hours > 5, hours < 9) {
+    if(hours > 5, hours < 10) {
         imageHolder.innerHTML = ("<img src='images/sunrise.jpg' width=50% >")    
     } 
-    else if(hours >= 9, hours < 17) {
+    else if(hours >= 10, hours < 17) {
         imageHolder.innerHTML = ("<img src='images/day.jpg' width=50% >")    
     } 
     else if(hours >= 17, hours < 20) {
@@ -45,37 +41,27 @@ function getGreeting() {
     if(hours > 5, hours < 10) {
         greetHolder.innerHTML = 'Godmorgon ha en fin dag!';
     } 
-    else if(hours >= 10, hours < 13){
+    else if(hours >= 10, hours < 12){
         greetHolder.innerHTML = 'God förmiddag';
     }
-    else if(hours >= 11, hours < 13){
-        greetHolder.innerHTML = 'Godmiddag';
+    else if(hours >= 12, hours < 13){
+        greetHolder.innerHTML = 'Godmiddag, smaklig måltid';
     }
     else if(hours >= 13, hours < 17){
         greetHolder.innerHTML = 'God eftermiddag'
     }
-    else if(hours >= 17, hours < 21){
+    else if(hours >= 17, hours < 20){
         greetHolder.innerHTML = 'Godkväll'
     }
     else {
         greetHolder.innerHTML = 'Godnatt, bra jobbat idag!'
     }
-    
-    // switch (greet) {
-    //     case 0: return 'Godmorgon'
-    //     case 1: return 'God förmiddag'
-    //     case 2: return 'Godmiddag'
-    //     case 3: return 'Godeftermiddag'
-    //     case 4: return 'Godkväll'
-    //     case 5: return 'Godnatt'
-    // }
 }
 
-function updateEverything() {
+function updateClock() {
     
     const date = new Date();
 
-    // OM JAG ANVÄNDER DETTA ISTÄLLET FÖR EN SEPARAT FUNKTION SÅ FUNKAR DET
     let hours = date.getHours();
     let minutes = date.getMinutes();
 
@@ -85,10 +71,6 @@ function updateEverything() {
     const timeHolder = document.getElementById('time');
     timeHolder.innerHTML = hours + ':' + minutes;
 
-    //Update time 
-    // const timeHolder = document.getElementById('time')
-    // timeHolder.innerHTML = getTime(date);
-
     //update weekday
     const weekdayHolder = document.getElementById('weekday')
     weekdayHolder.innerHTML = getWeekday(date);
@@ -97,21 +79,6 @@ function updateEverything() {
     const monthHolder = document.getElementById('month'); 
     monthHolder.innerHTML = getMonth(date);
 }
-
-// SKRIVER UT TIDEN 
-// function getTime(date) {
-
-    
-
-//     let hours = date.getHours();
-//     let minutes = date.getMinutes();
-    
-//     hours = formateDateCounter(hours); 
-//     minutes = formateDateCounter(minutes); 
-
-//     // const timeHolder = document.getElementById('time');
-//     // timeHolder.innerHTML = hours + ':' + minutes;
-// }
 
 function formateDateCounter(counter) {
     if (counter < 10) {
