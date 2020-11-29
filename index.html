@@ -6,23 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Schema</title>
     <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./aside.css">
+    <link rel="stylesheet" href="./mobile.css">
+    <script src="./JavaScript/main.js"></script>
+    <script src="./JavaScript/calendar.js"></script>
+    <script src="./JavaScript/todo.js"></script>
+    <script src="./JavaScript/today.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <script src="./main.js"></script>
-    <script defer src="today.js"></script>
 </head>
 
 <body>
-    <header class="grid">
+    <header class="grid hide-on-mobile">
         <div class="flex center orange-bg">
             <h1>Min kalender</h1>
         </div>
         <div class="year grid center">
-            <h2>2020</h2>
+            <h2 id="current-year"></h2>
         </div>
         <div class="month-grid grid center">
-            <a class="prev">&#10094;</a>
-            <h2 class="flex center">November</h2>
-            <a class="next">&#10095;</a>
+            <a id="prev" class="prev">&#10094;</a>
+            <h2 id="current-month" class="flex center"></h2>
+            <a id="next" class="next">&#10095;</a>
         </div>
     </header>
     <aside class="grid">
@@ -41,15 +45,54 @@
                 <p id="month"></p>
             </div>
         </div>
-        <div>
-            <h3 class="flex center" style="background: orange;">Dina To-Do's</h3>
-        </div>
-        <div class="flex addToDo">
-            <button class="flex center">+</button>
+
+        <div class="todo-grid grid">
+            <div class="todo-main-title flex center">
+                <h3 class="flex center">Dagens To-Do's</h3>
+            </div>
+            <!-- Show todo's for selected day -->
+            <div class="todo-container todo-page">
+                <div class="todo-event grid">
+                    <div class="event-time">
+                        <p>14:00</p>
+                    </div>
+                    <div class="event-information">
+                        <p><b>Klippa gräset</b></p>
+                        <p>Glöm inte bensinen</p>
+                    </div>
+                    <div class="event-delete flex flex-end">
+                        <span class="material-icons">cancel</span>
+                    </div>
+                </div>  
+            </div>
+            <!-- Create new todo -->
+            <div class="todo-container new-todo-page">
+                <form class="new-todo">
+                    <input type="text" id="title" placeholder="Titel">
+
+                    <input type="date" id="date">
+
+                    <input type="time" id="time">
+
+                    <textarea type="text" id="notes" placeholder="Anteckningar"></textarea>
+                </form>
+            </div>   
+            <!-- Todo buttons -->     
+            <div class="button-container flex">
+                <div class="todo-page flex flex-1 text-end">
+                    <span id="create-new-todo-button" class="create-todo-button material-icons">add_circle</span>
+                </div>
+                <div class="new-todo-page flex flex-1">
+                    <div class="flex space-between">
+                        <i id="cancel-new-todo-button" class="cancel-todo-button material-icons">cancel</i>
+                        <button id="save-new-todo-button" class="save-todo-button">Lägg till</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </aside>
-  
-    <main class="grid">
+
+    <main class="grid hide-on-mobile" >
         <div class="week-title flex center">
             <p>V.</p>
         </div>
@@ -69,11 +112,8 @@
             <p>23</p>
             <p>24</p>
         </div>
-        <div class="date-container grid center">
-            <div class="date grid center">
-                <p class="large-text">11</p>
-                <p>3</p>
-            </div>               
+        <div id="day-container" class="date-container grid center">
+            <!-- Days appear from Calendar.js -->
         </div>
     </main>
 </body>
