@@ -1,5 +1,6 @@
 /* Global scope */
 let todos = [];
+let todoId = 0;
 
 
 
@@ -59,10 +60,12 @@ function createNewTodo(){
         title: todoTitle,
         date: todoDate,
         time: todoTime,
-        notes: todoNotes
+        notes: todoNotes,
+        todoId: todoId
     };
 
     todos.push(todo);
+    todoId = todoId + 1
 
 
     renderTodoList();
@@ -92,6 +95,14 @@ function renderTodoList() {
 
         const deleteButton = document.createElement('button');
         deleteButton.className = 'delete';
+
+        function deleteTodo() {
+            const div = this.parentElement;
+            div.style.display = "none";
+            todos = todos.filter(abc => abc.todoId !== todo.todoId)
+        }
+
+
         deleteButton.addEventListener('click', deleteTodo);
 
         const deleteText = document.createElement('p');
@@ -116,14 +127,6 @@ function clearForm(){
     document.getElementById('notes').value = '';
 }
 
-
-/* Delete todo on click */
-function deleteTodo(count) {
-    const div = this.parentElement;
-    div.style.display = "none";
-
-    todos.pop(todo);   
-}
 
 
 
