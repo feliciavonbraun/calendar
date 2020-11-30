@@ -30,19 +30,21 @@
         </div>
     </header>
     <aside class="grid">
-        <div class="flex center">
-            <div id="skyImage"></div>
-            <div class="profilePicture">
-                <img src="images/profile-pic.png" alt="">
+        <div class="mobile-header">
+            <div class="flex center">
+                <div id="skyImage"></div>
+                <div class="profilePicture">
+                    <img src="images/profile-pic.png" alt="">
+                </div>
             </div>
-        </div>
-        <div class="flex center todaysTime" style="background: white;">
-            <p id="greeting"></p>
-            <p id="todays-time" style="font-size: x-large;"></p>
-            <div class="flex">
-                <p id="weekday"></p> 
-                <p>&nbsp;</p> 
-                <p id="month"></p>
+            <div class="flex center welcome-section" style="background: white;">
+                <p id="greeting"></p>
+                <p id="todays-time"></p>
+                <div class="flex column">
+                    <p id="weekday"></p> 
+                    <p class="hide-on-mobile">&nbsp;</p> 
+                    <p id="month"></p>
+                </div>
             </div>
         </div>
 
@@ -80,7 +82,7 @@
             </div>
         </div>
     </aside>
-
+    
     <main class="grid hide-on-mobile" >
         <div class="week-title flex center">
             <p>V.</p>
