@@ -32,7 +32,7 @@ img {
     background-color: #C4C4C4;
     grid-template-areas: 
     "main-title"
-    "todo-container"
+    "main-content"
     "button-container";
 }
 
@@ -42,9 +42,9 @@ img {
     grid-area: main-title;
 }
 
-.todo-container{
+.todo-main-content {
     padding: .5rem; 
-    grid-area: todo-container;
+    grid-area: main-content;
 }
 
 .button-container {
@@ -62,27 +62,30 @@ img {
 }
 
 /* Aside - todoPage - layout */
-.todo-event {
+.each-todo-container {
+    /*
     grid-template-columns: 4rem auto;
     grid-template-rows: auto 2rem;
     grid-template-areas: 
     "time event"
     ". delete";
+    */
 
     padding: .3rem;
+    margin-bottom: .5rem;
     border-top: .3rem solid #FFA023;
     background-color: white;
 }
 
-.event-time {
+.todo-time {
     grid-area: time;
 }
 
-.event-information {
+.todo-information {
     grid-area: event;
 }
 
-.event-delete {
+.todo-delete {
     align-items: flex-end;
     grid-area: delete;
 }
@@ -135,4 +138,16 @@ img {
     font-size: 3rem;
     color: #333;
     cursor: pointer;
+}
+
+.delete {
+    height: 1.5rem;
+    width: 1.5rem;
+    background-color: #333;
+    border-radius: 1000px;
+    border-style: none;
+    outline: none;
+    text-align: center;
+    color: white;
+    font-weight: bold;
 }
