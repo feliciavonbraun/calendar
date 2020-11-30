@@ -1,0 +1,21 @@
+@media (max-width: 750px) {
+    .hide-on-mobile {
+        display: none;
+    }
+
+    .aside {
+        width: 100%;
+        grid-column: none;
+    }
+
+    .mobile-header {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        text-align: center;
+    }
+
+    .profilePicture {
+        width: 20%;
+    }
+
+}
