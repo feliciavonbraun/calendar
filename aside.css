@@ -65,15 +65,13 @@ img {
 
 /* Aside - todoPage - layout */
 .each-todo-container {
-    /*
     grid-template-columns: 4rem auto;
     grid-template-rows: auto 2rem;
     grid-template-areas: 
-    "time event"
+    "time todo"
     ". delete";
-    */
 
-    padding: .3rem;
+    padding: .5rem;
     margin-bottom: .5rem;
     border-top: .3rem solid #FFA023;
     background-color: white;
@@ -84,7 +82,8 @@ img {
 }
 
 .todo-information {
-    grid-area: event;
+    grid-area: todo;
+    margin-bottom: 1rem;
 }
 
 .todo-delete {
@@ -142,7 +141,7 @@ img {
     cursor: pointer;
 }
 
-.delete {
+.delete-button {
     height: 1.5rem;
     width: 1.5rem;
     background-color: #333;

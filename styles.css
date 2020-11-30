@@ -136,6 +136,10 @@ h2 {
     text-align: center;
 }
 
+.bold {
+    font-weight: bold;
+}
+
 .count-of-todo-text {
     color: #FFA023;
     font-weight: bold;
