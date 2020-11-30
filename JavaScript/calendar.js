@@ -5,11 +5,11 @@ let date = new Date();
 function calendar() {
     showCurrentMonth();
     showYear();
-    getMonth();
+    renderCalendar();
 }
 
 /* Hämta månad */
-function getMonth() {
+function renderCalendar() {
     let fakeMonth = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15,
         16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30];
 
@@ -51,7 +51,7 @@ function createDay(date, id) {
 function presentDays(data) {
     const container = document.getElementById('day');
     container.innerHTML = data.getDate;
-    console.log(data)
+    // console.log(data)
 }
 
 /* HEADER */

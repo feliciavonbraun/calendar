@@ -1,4 +1,3 @@
-
 function today() {
     startIntervals();
 }
@@ -104,7 +103,6 @@ function getWeekday(date) {
 
 // SKRIVER UT DATUM OCH MÅNAD 
 function getMonth(date) {
-    // const date = new Date();
     const dayOfMonth = date.getDate();
     const month = date.getMonth();
     
