@@ -4,10 +4,10 @@ function today() {
 
 function startIntervals() {
     getImage();
-    setInterval(getImage, 1000 * 60 * 60);
+    setInterval(getImage, 60000);
 
     getGreeting();
-    setInterval(getGreeting, 3600 * 60 * 60)
+    setInterval(getGreeting, 60000)
 
     updateClock();
     setInterval(updateClock, 1000);
@@ -19,16 +19,16 @@ function getImage(){
     
     let hours = new Date().getHours(); 
     if(hours > 5, hours < 10) {
-        imageHolder.innerHTML = ("<img src='images/sunrise.jpg' width=50% >")    
+        imageHolder.innerHTML = ("<img src='images/sunrise.jpg' width=100% >")    
     } 
     else if(hours >= 10, hours < 17) {
-        imageHolder.innerHTML = ("<img src='images/day.jpg' width=50% >")    
+        imageHolder.innerHTML = ("<img src='images/day.jpg' width=100% >")    
     } 
     else if(hours >= 17, hours < 20) {
-        imageHolder.innerHTML = ("<img src='images/dawn.jpg' width=50% >")    
+        imageHolder.innerHTML = ("<img src='images/dawn.jpg' width=100% >")    
     } 
     else {
-        imageHolder.innerHTML = ("<img src='images/stars.jpg' width=50% >")    
+        imageHolder.innerHTML = ("<img src='images/stars.jpg' width=100% >")    
     } 
 }
 

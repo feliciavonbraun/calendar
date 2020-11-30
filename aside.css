@@ -18,12 +18,14 @@ aside {
 img {
     display: grid;
     width: 100%;
-    flex-direction: row;
 }
 
-.todaysTime {
+.welcome-section {
     flex-direction: column;
-    
+}
+
+#todays-time {
+    font-size: x-large;
 }
 
 /* Aside - Grid for todo area */
