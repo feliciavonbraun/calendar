@@ -67,7 +67,7 @@ function updateClock() {
     hours = formateDateCounter(hours); 
     minutes = formateDateCounter(minutes); 
 
-    const timeHolder = document.getElementById('time');
+    const timeHolder = document.getElementById('todays-time');
     timeHolder.innerHTML = hours + ':' + minutes;
 
     //update weekday
