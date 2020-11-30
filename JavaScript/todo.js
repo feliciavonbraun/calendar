@@ -79,22 +79,36 @@ function renderTodoList() {
 
     for(const todo of todos) {
         const newTodo = document.createElement('div');
-        newTodo.classList.add('each-todo-container');
+        newTodo.classList.add('each-todo-container', 'grid');
+
+        /* Time */
+        const timeContainer = document.createElement('div');
+        timeContainer.classList.add('todo-time', 'grid');
+
+        const titleTime = document.createElement('p');
+        titleTime.innerHTML = todo.time;
+
+        /* Title, Date, Notes */
+        const titleContainer = document.createElement('div');
+        titleContainer.classList.add('todo-information', 'grid');
 
         const titleText = document.createElement('p');
+        titleText.classList.add('bold');
         titleText.innerHTML = todo.title;
 
         const titleDate = document.createElement('p');
         titleDate.innerHTML = todo.date;
 
-        const titleTime = document.createElement('p');
-        titleTime.innerHTML = todo.time;
-
         const titleNotes = document.createElement('p');
         titleNotes.innerHTML = todo.notes;
 
+        /* Delete Button */
         const deleteButton = document.createElement('button');
-        deleteButton.className = 'delete';
+        deleteButton.classList.add('delete-button');
+        deleteButton.addEventListener('click', deleteTodo);
+
+        const deleteText = document.createElement('p');
+        deleteText.innerHTML = 'X'
 
         function deleteTodo() {
             const div = this.parentElement;
@@ -103,17 +117,16 @@ function renderTodoList() {
         }
 
 
-        deleteButton.addEventListener('click', deleteTodo);
-
-        const deleteText = document.createElement('p');
-        deleteText.innerHTML = 'X'
-        
-
+        /* Append form elements */
         container.appendChild(newTodo);
-        newTodo.appendChild(titleText);
-        newTodo.appendChild(titleDate);
-        newTodo.appendChild(titleTime);
-        newTodo.appendChild(titleNotes);        
+        newTodo.appendChild(timeContainer);
+        timeContainer.appendChild(titleTime);
+
+        newTodo.appendChild(titleContainer);
+        titleContainer.appendChild(titleText);
+        titleContainer.appendChild(titleDate);
+        titleContainer.appendChild(titleNotes);
+
         newTodo.appendChild(deleteButton);
         deleteButton.appendChild(deleteText);
     }
