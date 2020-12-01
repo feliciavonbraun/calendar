@@ -1,0 +1,44 @@
+/* Tablet */
+@media (max-width: 750px) {
+    body {
+        grid-template-rows: 1fr auto;
+        grid-template-columns: auto;
+    }
+    
+    .hide-on-mobile {
+        display: none;
+    }
+
+    .mobile-welcome-section {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        text-align: center;
+        font-size: small;
+    }
+
+    .welcome-section {
+        margin: 0;
+    }
+}
+
+
+@media (max-width: 550px) {
+    .mobile-welcome-section {
+        display: grid;
+        grid-template-columns: auto;
+        text-align: center;
+        font-size: small;
+    }  
+
+    .welcome-section {
+        margin: .5rem 0;
+    }
+
+    #todays-time {
+        font-size: large;
+    }
+
+    .mobile-column {
+        flex-direction: column;
+    } 
+}

@@ -4,6 +4,7 @@
 
 body {
     margin: 0;
+    font-family: 'Noto Sans', sans-serif;
 
     display: grid;
     grid-template-columns: .5fr 2fr;
@@ -58,8 +59,9 @@ main {
 
 .date-container {
     grid-template-columns: repeat(7, 1fr);
-    grid-template-rows: repeat(6, 1fr);
+    grid-template-rows: repeat(5, 1fr);
     gap: .5rem;
+    margin: .5rem .5rem;
 }
 
 .date {
@@ -67,14 +69,13 @@ main {
     width: 100%;
     text-align: center;
     background-color: white;
-    
-    /* Active day + to do*/
     border: .2rem solid #FFA023;
-    border-top: 1rem solid #FFA023;
+    transition: ease-in-out .3s;   
 }
 
 .date:hover {
-    background-color: #f8cf99;
+    background-color: #ffa02369;
+    border-top: 1rem solid #FFA023;
 }
 
 
