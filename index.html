@@ -4,55 +4,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Schema</title>
-    <link rel="stylesheet" href="./styles.css">
-    <link rel="stylesheet" href="./aside.css">
-    <link rel="stylesheet" href="./mobile.css">
+    <title>Min Kalender</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/aside.css">
+    <link rel="stylesheet" href="./css/mobile.css">
     <script src="./JavaScript/main.js"></script>
     <script src="./JavaScript/calendar.js"></script>
     <script src="./JavaScript/todo.js"></script>
     <script src="./JavaScript/today.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <header class="grid hide-on-mobile">
-        <div class="flex center orange-bg">
-            <h1>Min kalender</h1>
+    <header class="hide-on-mobile grid">
+        <div class="orange-bg flex center">
+            <h1>Min Kalender</h1>
         </div>
         <div class="year grid center">
-            <h2 id="current-year"></h2>
+            <h2 id="current-year">
+                <!-- Year appear from javascript -->
+            </h2>
         </div>
         <div class="month-grid grid center">
-            <a id="prev" class="prev">&#10094;</a>
-            <h2 id="current-month" class="flex center"></h2>
-            <a id="next" class="next">&#10095;</a>
+            <p>&#10094;</p>
+            <h2 id="current-month" class="flex center">
+                <!-- Month appear from javascript -->
+            </h2>
+            <p>&#10095;</p>
         </div>
     </header>
     <aside class="grid">
-        <div class="mobile-header">
+        <div class="mobile-welcome-section">
             <div class="flex center">
-                <div id="skyImage"></div>
-                <div class="profilePicture">
-                    <img src="images/profile-pic.png" alt="">
+                <div id="sky-image">
+                    <!-- Images appear from javascript -->
+                </div>
+                <div class="profile-picture">
+                    <img src="images/profile-pic.png" alt="Profile picture">
                 </div>
             </div>
-            <div class="flex center welcome-section" style="background: white;">
-                <p id="greeting"></p>
-                <p id="todays-time"></p>
-                <div class="flex column">
-                    <p id="weekday"></p> 
+            <div class="welcome-section flex center">
+                <p id="greeting">
+                    <!-- Greeting appear from javascript -->
+                </p>
+                <p id="todays-time">
+                    <!-- Time appear from javascript -->
+                </p>
+                <div class="mobile-column flex">
+                    <p id="weekday">
+                        <!-- Weekday appear from javascript -->
+                    </p> 
                     <p class="hide-on-mobile">&nbsp;</p> 
-                    <p id="month"></p>
+                    <p id="month">
+                        <!-- Month appear from javascript -->
+                    </p>
                 </div>
             </div>
         </div>
 
         <div class="todo-grid grid">
-            <div class="todo-main-title flex center">
-                <h3 class="flex center">Dagens To-Do's</h3>
+            <div class="todo-main-title orange-bg flex center">
+                <h3 class="flex center">To-Do's</h3>
             </div>
-            <!-- Show todo's for selected day -->
             <div id="todo-container" class="todo-main-content todo-page">        <!-- Add id for todoContainer -->
                 <!-- Todo's appear from javascript -->  
             </div>
@@ -71,7 +86,7 @@
             <!-- Todo buttons -->     
             <div class="button-container flex">
                 <div class="todo-page flex flex-1 text-end">
-                    <span id="create-new-todo-button" class="create-todo-button material-icons">add_circle</span>
+                    <i id="create-new-todo-button" class="create-todo-button material-icons">add_circle</i>
                 </div>
                 <div class="new-todo-page flex flex-1">
                     <div class="flex space-between">
@@ -83,7 +98,7 @@
         </div>
     </aside>
     
-    <main class="grid hide-on-mobile" >
+    <main class="hide-on-mobile grid" >
         <div class="week-title flex center">
             <p>V.</p>
         </div>
@@ -97,12 +112,11 @@
             <p>Söndag</p>
         </div>
         <div class="week grid center">
-            <p>44</p>
-            <p>45</p>
-            <p>46</p>
-            <p>47</p>
-            <p>48</p>
             <p>49</p>
+            <p>50</p>
+            <p>51</p>
+            <p>52</p>
+            <p>53</p>
         </div>
         <div id="day-container" class="date-container grid center">
             <!-- Days appear from Calendar.js -->

@@ -2,17 +2,18 @@
 aside {
     height: 100vh;
     min-width: 15rem;
-    grid-template-rows: 1fr 1fr 3fr;
+    grid-template-rows: 1fr 3fr;
     grid-area: aside;
 }
 
-.profilePicture {
+.profile-picture {
     position: absolute;
-    width: 10%;
 }
 
-.profilePicture > :first-child {
+.profile-picture > :first-child {
     border-radius: 50%;
+    width: 6rem;
+    height: 6rem;
 }
 
 img {
@@ -22,6 +23,7 @@ img {
 
 .welcome-section {
     flex-direction: column;
+    margin: .5rem 0;
 }
 
 #todays-time {
@@ -31,7 +33,7 @@ img {
 /* Aside - Grid for todo area */
 .todo-grid {
     grid-template-rows: 2rem auto 4rem;
-    background-color: #C4C4C4;
+    background-color: #e2e0e0;
     grid-template-areas: 
     "main-title"
     "main-content"
@@ -39,7 +41,6 @@ img {
 }
 
 .todo-main-title {
-    background-color: #FFA023;
     color: white;
     grid-area: main-title;
 }

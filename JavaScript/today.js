@@ -1,21 +1,23 @@
+/* Start of today */
 function today() {
     startIntervals();
 }
 
+/* Start intervals */
 function startIntervals() {
-    getImage();
-    setInterval(getImage, 60000);
+    updateImage();
+    setInterval(updateImage, 60000);
 
-    getGreeting();
-    setInterval(getGreeting, 60000)
+    updateGreeting();
+    setInterval(updateGreeting, 60000)
 
-    updateClock();
-    setInterval(updateClock, 1000);
+    updateTimeAndDateOfToday();
+    setInterval(updateTimeAndDateOfToday, 1000);
 }
 
-// ÄNDRAR BAKGRUNDBILDEN
-function getImage(){
-    const imageHolder = document.getElementById('skyImage')
+/* Update image on interval */
+function updateImage(){
+    const imageHolder = document.getElementById('sky-image')
     
     let hours = new Date().getHours(); 
     if(hours > 5, hours < 10) {
@@ -32,8 +34,8 @@ function getImage(){
     } 
 }
 
-// ÄNDRAR HÄLSNINGEN
-function getGreeting() {
+/* Update greeting on interval */
+function updateGreeting() {
     const greetHolder = document.getElementById('greeting');
     
     let hours = new Date().getHours();
@@ -57,15 +59,16 @@ function getGreeting() {
     }
 }
 
-function updateClock() {
+/* Update time and day for today */
+function updateTimeAndDateOfToday() {
     
     const date = new Date();
 
     let hours = date.getHours();
     let minutes = date.getMinutes();
 
-    hours = formateDateCounter(hours); 
-    minutes = formateDateCounter(minutes); 
+    hours = formateTimeCounter(hours); 
+    minutes = formateTimeCounter(minutes); 
 
     const timeHolder = document.getElementById('todays-time');
     timeHolder.innerHTML = hours + ':' + minutes;
@@ -79,14 +82,21 @@ function updateClock() {
     monthHolder.innerHTML = getMonth(date);
 }
 
-function formateDateCounter(counter) {
+/**
+ * Add '0' before hours and minutes if less than 10.
+ * @param {number} counter 
+ */
+function formateTimeCounter(counter) {
     if (counter < 10) {
         return '0' + counter; 
     }
     return counter;
 }
 
-//SKRIVER UT VECKODAGEN
+/**
+ * Translate weekday index to weekday name.
+ * @param {Date} date 
+ */
 function getWeekday(date) {
     const weekday = date.getDay();
 
@@ -101,7 +111,10 @@ function getWeekday(date) {
     }
 }
 
-// SKRIVER UT DATUM OCH MÅNAD 
+/**
+ * Translate month index to month name and adds todays date.
+ * @param {Date} date 
+ */
 function getMonth(date) {
     const dayOfMonth = date.getDate();
     const month = date.getMonth();

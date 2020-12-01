@@ -1,10 +1,10 @@
-/* Global scope */
+// Global scope
 let todos = [];
 let todoId = 0;
 
 
 
-/* Start function */
+/* Start of todo */
 function todo() {   
     addEventListeners()
 }
@@ -18,7 +18,10 @@ function addEventListeners(){
 }
 
 
-/* Show next page (display) */
+/**
+ * Show next page on click. 
+ * @param {MouseEvent} event 
+ */
 function showNextPage(event) {
     const todoPage = Array.from(document.getElementsByClassName('todo-page'));
     const newTodoPage = Array.from(document.getElementsByClassName('new-todo-page'));
@@ -37,12 +40,18 @@ function showNextPage(event) {
     }
 }
 
-/* Show element */
+/**
+ * Show elements.
+ * @param {Element[]} element 
+ */
 function showPage(element) {
     element.style.display = 'unset';
 }
 
-/* Hide element */
+/**
+ * Hide elements.
+ * @param {Element[]} element 
+ */
 function hidePage(element) {
     element.style.display = 'none';
 }
@@ -50,12 +59,15 @@ function hidePage(element) {
 
 /* FORM */
 
+/* Saves user inputs from todo-form */
 function createNewTodo(){
     const todoTitle = document.getElementById('title').value;
     const todoDate = document.getElementById('date').value;
     const todoTime = document.getElementById('time').value;
     const todoNotes = document.getElementById('notes').value;
 
+    // Create object of user inputs.
+    todoId = todoId + 1
     const todo = {
         title: todoTitle,
         date: todoDate,
@@ -64,15 +76,17 @@ function createNewTodo(){
         todoId: todoId
     };
 
+    // Add object to todos array.
     todos.push(todo);
-    todoId = todoId + 1
+    
 
-
+    // Update user interface.
     renderTodoList();
-    renderCalendar(); /* Render from calender js. Ignorera för tillfället*/
+    getDecemberMonth();
     clearForm();
 }
 
+/* Creates todos and updates todo list */
 function renderTodoList() {
     const container = document.getElementById('todo-container');
     container.innerHTML = "";
@@ -81,14 +95,14 @@ function renderTodoList() {
         const newTodo = document.createElement('div');
         newTodo.classList.add('each-todo-container', 'grid');
 
-        /* Time */
+        // Time
         const timeContainer = document.createElement('div');
         timeContainer.classList.add('todo-time', 'grid');
 
         const titleTime = document.createElement('p');
         titleTime.innerHTML = todo.time;
 
-        /* Title, Date, Notes */
+        // Title, Date, Notes
         const titleContainer = document.createElement('div');
         titleContainer.classList.add('todo-information', 'grid');
 
@@ -102,7 +116,7 @@ function renderTodoList() {
         const titleNotes = document.createElement('p');
         titleNotes.innerHTML = todo.notes;
 
-        /* Delete Button */
+        // Delete Button
         const deleteButton = document.createElement('button');
         deleteButton.classList.add('delete-button');
         deleteButton.addEventListener('click', deleteTodo);
@@ -110,14 +124,15 @@ function renderTodoList() {
         const deleteText = document.createElement('p');
         deleteText.innerHTML = 'X'
 
+        // Delete todo
         function deleteTodo() {
             const div = this.parentElement;
             div.style.display = "none";
-            todos = todos.filter(abc => abc.todoId !== todo.todoId)
+            todos = todos.filter(t => t.todoId !== todo.todoId);
+            getDecemberMonth();
         }
 
-
-        /* Append form elements */
+        // Show new todo in todo list
         container.appendChild(newTodo);
         newTodo.appendChild(timeContainer);
         timeContainer.appendChild(titleTime);
